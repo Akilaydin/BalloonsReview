@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: fd18f8ed816757e4e9f17605384208c5
+guid: 096acb60e4415954aac46f4cee397f3c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5437077150085525020
-    second: balloon-512_1
+      213: -676628513636133388
+    second: Glow_0
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -118,13 +118,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: balloon-512_0
+      name: Glow_0
       rect:
         serializedVersion: 2
-        x: 143
-        y: 0
+        x: 795
+        y: 978
         width: 77
-        height: 108
+        height: 167
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -132,29 +132,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 058d27d0671c3af50800000000000000
-      internalID: 6891564567582922832
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: balloon-512_1
-      rect:
-        serializedVersion: 2
-        x: 102
-        y: 109
-        width: 308
-        height: 403
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c1ead337cd0647b40800000000000000
-      internalID: 5437077150085525020
+      spriteID: 4f551d7a3f12c96f0800000000000000
+      internalID: -676628513636133388
       vertices: []
       indices: 
       edges: []

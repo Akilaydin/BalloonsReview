@@ -23,12 +23,6 @@ public class SpawnedObjectsPool : MonoBehaviour
 
         obj.SetActive(true);
         obj.transform.position = spawnTransform.position;
-        obj.transform.rotation = spawnTransform.rotation;
-        
-        if (obj.TryGetComponent(out ISpawnedObject pooledObjectComponent))
-        {
-            pooledObjectComponent.DoOnSpawnAction();
-        }
 
         _objectsToPool.Enqueue(obj);
 
