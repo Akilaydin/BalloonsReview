@@ -1136,7 +1136,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 500
+      scalar: 1
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1189,7 +1189,7 @@ ParticleSystem:
     rateOverDistance:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 22
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1246,7 +1246,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 0
-        scalar: 55
+        scalar: 40
         minScalar: 30
         maxCurve:
           serializedVersion: 2
@@ -5362,6 +5362,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 5519771922435376173}
+        m_TargetAssemblyTypeName: OnPopScoreGiver, Assembly-CSharp
+        m_MethodName: InvokePopped
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5519771922435376173}
+        m_TargetAssemblyTypeName: OnPopScoreGiver, Assembly-CSharp
+        m_MethodName: RemoveListeners
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _transformToScale: {fileID: 504741210102899141}
   _scaleData:
   - _scale: {x: 0.85, y: 0.85}
@@ -5379,10 +5403,13 @@ GameObject:
   - component: {fileID: 504741210102899141}
   - component: {fileID: 8503808910138584426}
   - component: {fileID: 658405429025404772}
-  - component: {fileID: 1057135089744658204}
+  - component: {fileID: 5128127844197664634}
   - component: {fileID: 3816725854901004073}
   - component: {fileID: 9135274243079137057}
   - component: {fileID: 2535116343701341932}
+  - component: {fileID: 2520340896223486555}
+  - component: {fileID: 5519771922435376173}
+  - component: {fileID: 1781859790372262703}
   m_Layer: 0
   m_Name: Balloon
   m_TagString: Untagged
@@ -5418,7 +5445,7 @@ CapsuleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.6015266}
@@ -5445,7 +5472,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1057135089744658204
+--- !u!114 &5128127844197664634
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5454,12 +5481,60 @@ MonoBehaviour:
   m_GameObject: {fileID: 8295110222537329722}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75694fee90ac12644987bf19f9b09dc5, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d5074f88ca6f6843a9cddf62f00504c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actions:
-  - {fileID: 3816725854901004073}
-  - {fileID: 9135274243079137057}
+  _spawned:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 9135274243079137057}
+        m_TargetAssemblyTypeName: RandomizedVelocitySetter, Assembly-CSharp
+        m_MethodName: SetVelocity
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2520340896223486555}
+        m_TargetAssemblyTypeName: ColliderStateSetter, Assembly-CSharp
+        m_MethodName: SetState
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 3816725854901004073}
+        m_TargetAssemblyTypeName: ColorChanger, Assembly-CSharp
+        m_MethodName: Colorize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 7494893031543719881}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &3816725854901004073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5488,7 +5563,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb5d35b8d2f21b4ca03c6d86e2e81ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _velocityToSetOnSpawn: {x: 0, y: -3}
+  _minVelocityToSet: {x: 0, y: -3}
+  _maxVelocityToSet: {x: 0, y: -5}
   _rigidbody2D: {fileID: 658405429025404772}
 --- !u!114 &2535116343701341932
 MonoBehaviour:
@@ -5517,3 +5593,60 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8503808910138584426}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2520340896223486555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8295110222537329722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6683f41ecd52794291cc9532f70ade3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collider: {fileID: 8503808910138584426}
+--- !u!114 &5519771922435376173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8295110222537329722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 78c4e6dfab2505a40aafbc1d6aee00d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Popped:
+    m_PersistentCalls:
+      m_Calls: []
+  _data: {fileID: 1781859790372262703}
+--- !u!114 &1781859790372262703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8295110222537329722}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3856b2119952a594aa7bb65e29854381, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minPointsForDestroying: 10
+  _maxPointsForDestroying: 20
+  _minDamageWhenOutOfScreen: 5
+  _maxDamageWhenOutOfScreen: 20

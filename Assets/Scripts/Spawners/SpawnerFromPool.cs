@@ -1,8 +1,12 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class SpawnerFromPool : MonoBehaviour
 {
+    [SerializeField]
+    private ScoreHolder _scoreHolder;
+    
     [SerializeField]
     private UnityEvent<GameObject> _objectSpawned;
     
@@ -15,12 +19,14 @@ public class SpawnerFromPool : MonoBehaviour
     {
         _currentObject = _objectsPool.GetObjectFromPool(transform);
                 
-       if (_currentObject.TryGetComponent(out OnSpawnActionsContainer pooledObjectComponent))
+       if (_currentObject.TryGetComponent(out OnSpawnAction action))
        { 
-           foreach (var action in pooledObjectComponent.Actions) 
-           {
-               action.DoOnSpawnAction(); 
-           }
+           action.DoAction();
+       }
+
+       if (_currentObject.TryGetComponent(out OnPopScoreGiver scoreGiver))
+       {
+           scoreGiver.Popped.AddListener(_scoreHolder.AddScore);
        }
 
        _objectSpawned?.Invoke(_currentObject);

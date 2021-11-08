@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class OnSpawnColorChanger : BaseSpawnedAction
+public class ColorChanger : MonoBehaviour
 {
     [SerializeField]
     private ColorsData _colorsData;
@@ -10,12 +10,7 @@ public class OnSpawnColorChanger : BaseSpawnedAction
 
     private int _colorIndex;
     
-    public override void DoOnSpawnAction()
-    {
-        ColorizeBalloon();
-    }
-
-    private void ColorizeBalloon()
+    public void Colorize()
     {
         _colorIndex = Random.Range(0, _colorsData.Colors.Length);
 
